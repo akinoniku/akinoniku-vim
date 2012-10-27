@@ -54,7 +54,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "acky
-set mouse=a
+"set mouse=a
 call pathogen#infect()
 set t_Co=256
 "set guifont=Luxi\ Mono\ 9
@@ -184,21 +184,21 @@ au BufNewFile,BufRead *.php,*.php\d,*.phtml,*.ctp,*.inc setf php
 
 " => Plugin configuration
 
+set directory=$VIM\vimfiles\temp,~/tmp,/tmp,D:\tmp
 
 " taglist
 if MySys() == "windows"  
 	let Tlist_Ctags_Cmd = 'ctags'  
 elseif MySys() == "linux"  
 	let Tlist_Ctags_Cmd = '/usr/bin/ctags'  
-	set directory=$VIM\vimfiles\temp,~/tmp,/tmp,D:\tmp
 endif  
 
 let Tlist_Auto_Highlight_Tag = 1
-let Tlist_Auto_Open = 1
+let Tlist_Auto_Open = 0
 let Tlist_Auto_Update = 1
 let Tlist_Close_On_Select = 0
 let Tlist_Compact_Format = 0
-let Tlist_Display_Prototype = 0
+let Tlist_Display_Prototype = 1
 let Tlist_Display_Tag_Scope = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Exit_OnlyWindow = 1 
@@ -209,18 +209,6 @@ let Tlist_Inc_Winwidth = 0
 let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口 
 map <F10> :TlistToggle<CR>
-
-"phpfuncion
-
-if !exists('g:AutoComplPop_Behavior')
-    let g:AutoComplPop_Behavior = {}
-    let g:AutoComplPop_Behavior['php'] = []
-    call add(g:AutoComplPop_Behavior['php'], {
-            \   'command'   : "\<C-x>\<C-o>", 
-            \   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0),
-            \   'repeat'    : 0,
-            \})
-endif
 
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -250,19 +238,11 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 "ctags 
 set tags=tags
 set tags+=./tags        " add current directory's generated tags file
-set tags+=/var/www/ZendFramework/library/ " add new tags file
-
-" lookupfile 
-let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
-let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
-let g:LookupFile_PreservePatternHistory = 1     "保存查找历史
-let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
-let g:LookupFile_AllowNewFiles = 0              "不允许创建不存在的文件
 
 "SuperTab
 let g:SuperTabMappingForward="<tab>" 
-"let g:SuperTabRetainCompletionType=2
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+let g:SuperTabRetainCompletionType=2
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
 "let g:SuperTabDefaultCompletionType = "context"
 
 let g:syntastic_check_on_open=1
@@ -272,7 +252,7 @@ let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 """"""""""""""""""""""""""""""
 " lookupfile setting
 """"""""""""""""""""""""""""""
-let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
+let g:LookupFile_MinPatLength = 5               "最少输入5个字符才开始查找
 let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
 let g:LookupFile_PreservePatternHistory = 1     "保存查找历史
 let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
@@ -281,8 +261,8 @@ if filereadable("./filenametags")                "设置tag文件的名字
 let g:LookupFile_TagExpr = '"./filenametags"'
 endif
 ""映射LookupFile为,lk
-"nmap <silent> <leader>lk :LUTags<cr>
+nmap <silent> <leader>lk :LUTags<cr>
 ""映射LUBufs为,ll
-"nmap <silent> <leader>ll :LUBufs<cr>
+nmap <silent> <leader>ll :LUBufs<cr>
 ""映射LUWalk为,lw
-"nmap <silent> <leader>lw :LUWalk<cr>
+nmap <silent> <leader>lw :LUWalk<cr>
