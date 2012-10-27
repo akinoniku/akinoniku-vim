@@ -159,7 +159,6 @@ if !exists('g:AutoComplPop_Behavior')
             \}) 
 endif 
 
-
 " 打开javascript折叠
 let b:javascript_fold=1
 
@@ -173,6 +172,13 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 let g:html_indent_inctags = "html,body,head,tbody"
 
+endfunction
+
+au FileType phtml,html,htm,smarty call SetOptionForHtml()
+function! SetOptionForHtml()
+  set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 4
+  set tabstop=2    " 用4个空格代替1个tab
+  set sts=2        " 设置softtabstop 为 4，输入tab后就跳了4格.
 endfunction
 
 "phpcomplete
