@@ -176,9 +176,9 @@ endfunction
 
 au FileType phtml,html,htm,smarty call SetOptionForHtml()
 function! SetOptionForHtml()
-  set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 4
-  set tabstop=2    " 用4个空格代替1个tab
-  set sts=2        " 设置softtabstop 为 4，输入tab后就跳了4格.
+  set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 2 
+  set tabstop=2    " 用2个空格代替1个tab
+  set sts=2        " 设置softtabstop 为 2，输入tab后就跳了2格.
 endfunction
 
 "phpcomplete
