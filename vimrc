@@ -266,3 +266,5 @@ nmap <silent> <leader>lk :LUTags<cr>
 nmap <silent> <leader>ll :LUBufs<cr>
 ""映射LUWalk为,lw
 nmap <silent> <leader>lw :LUWalk<cr>
+
+let g:JSLintHighlightErrorLine = 0
