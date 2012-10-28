@@ -261,7 +261,7 @@ let g:syntastic_phpcs_conf = "--tab-width=4 --standard=CodeIgniter"
 """"""""""""""""""""""""""""""
 " lookupfile setting
 """"""""""""""""""""""""""""""
-let g:LookupFile_MinPatLength = 5               "最少输入5个字符才开始查找
+let g:LookupFile_MinPatLength = 2               "最少输入2个字符才开始查找
 let g:LookupFile_PreserveLastPattern = 0        "不保存上次查找的字符串
 let g:LookupFile_PreservePatternHistory = 1     "保存查找历史
 let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项目
