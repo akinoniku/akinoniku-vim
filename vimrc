@@ -18,7 +18,7 @@ set nocompatible
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
 if has("syntax")
-  syntax on
+	syntax on
 endif
 
 " If using a dark background within the editing area and syntax highlighting
@@ -34,7 +34,7 @@ set background=dark
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
 if has("autocmd")
-  filetype plugin indent on
+	filetype plugin indent on
 endif
 
 " The following are commented out as they cause vim to behave a lot
@@ -50,7 +50,7 @@ endif
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
+	source /etc/vim/vimrc.local
 endif
 
 "acky
@@ -91,9 +91,9 @@ set guioptions-=b " 隐藏底部滚动条
 "Gvim 乱码的设置
 set fileencodings=utf-8,chinese,latin-1
 if has("win32")
-set fileencoding=chinese
+	set fileencoding=chinese
 else
-set fileencoding=utf-8
+	set fileencoding=utf-8
 endif
 "解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
@@ -103,7 +103,7 @@ language messages zh_CN.utf-8
 "Gvim 乱码的设置结束
 """""""""""""""""""""""""""""""""""""""""""""""
 " Alt+数字切换Table快捷键设置
- 
+
 :nn <M-1> 1gt
 :nn <M-2> 2gt
 :nn <M-3> 3gt
@@ -114,18 +114,18 @@ language messages zh_CN.utf-8
 :nn <M-8> 8gt
 :nn <M-9> 9gt
 :nn <M-0> :tablast<CR>
- 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 "
 " Platform
 function! MySys()
-  if has("win32")
-    return "windows"
-  else
-    return "linux"
-  endif
+	if has("win32")
+		return "windows"
+	else
+		return "linux"
+	endif
 endfunction
 
 "NERDTree
@@ -133,52 +133,52 @@ map <F9> :NERDTreeToggle<CR>
 
 au FileType phtml,php,c,java,javascript,html,htm,smarty call SetOption()
 function! SetOption()
-  set expandtab    " 使用空格代替tab
-  set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
-  set tabstop=4    " 用4个空格代替1个tab
-  set sts=4        " 设置softtabstop 为 4，输入tab后就跳了4格.
-  set cindent      " C语言方式缩进
-  set smartindent  " 智能缩进
-  set autoindent   " 自动缩进
-  set smarttab     " 只在行首用tab，其他地方的tab都用空格代替
-  set showmatch    " 在输入括号时光标会短暂地跳到与之相匹配的括号处
-"  set fdm=indent " 代码折叠
-  set lbr
-  set tw=500
-  set wrap         " 自动换行
-  set number
-  set fdm=syntax
-  set fen 
-if !exists('g:AutoComplPop_Behavior') 
-    let g:AutoComplPop_Behavior = {} 
-    let g:AutoComplPop_Behavior['php'] = [] 
-    call add(g:AutoComplPop_Behavior['php'], { 
-            \   'command'   : "\<C-x>\<C-o>", 
-            \   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0), 
-            \   'repeat'    : 0, 
-            \}) 
-endif 
+	set expandtab    " 使用空格代替tab
+	set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
+	set tabstop=4    " 用4个空格代替1个tab
+	set sts=4        " 设置softtabstop 为 4，输入tab后就跳了4格.
+	set cindent      " C语言方式缩进
+	set smartindent  " 智能缩进
+	set autoindent   " 自动缩进
+	set smarttab     " 只在行首用tab，其他地方的tab都用空格代替
+	set showmatch    " 在输入括号时光标会短暂地跳到与之相匹配的括号处
+	"  set fdm=indent " 代码折叠
+	set lbr
+	set tw=500
+	set wrap         " 自动换行
+	set number
+	set fdm=syntax
+	set fen 
+	if !exists('g:AutoComplPop_Behavior') 
+		let g:AutoComplPop_Behavior = {} 
+		let g:AutoComplPop_Behavior['php'] = [] 
+		call add(g:AutoComplPop_Behavior['php'], { 
+					\   'command'   : "\<C-x>\<C-o>", 
+					\   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0), 
+					\   'repeat'    : 0, 
+					\}) 
+	endif 
 
-" 打开javascript折叠
-let b:javascript_fold=1
+	" 打开javascript折叠
+	let b:javascript_fold=1
 
-" 打开javascript对dom、html和css的支持
-let javascript_enable_domhtmlcss=1
+	" 打开javascript对dom、html和css的支持
+	let javascript_enable_domhtmlcss=1
 
-"jQuery plugin 
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+	"jQuery plugin 
+	au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
-let g:html_indent_script1 = "inc" 
-let g:html_indent_style1 = "inc"
-let g:html_indent_inctags = "html,body,head,tbody"
+	let g:html_indent_script1 = "inc" 
+	let g:html_indent_style1 = "inc"
+	let g:html_indent_inctags = "html,body,head,tbody"
 
 endfunction
 
 au FileType phtml,html,htm,smarty call SetOptionForHtml()
 function! SetOptionForHtml()
-  set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 2 
-  set tabstop=2    " 用2个空格代替1个tab
-  set sts=2        " 设置softtabstop 为 2，输入tab后就跳了2格.
+	set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 2 
+	set tabstop=2    " 用2个空格代替1个tab
+	set sts=2        " 设置softtabstop 为 2，输入tab后就跳了2格.
 endfunction
 
 "phpcomplete
@@ -226,11 +226,11 @@ map <F10> :TlistToggle<CR>
 :inoremap > <c-r>=ClosePair('>')<CR>
 
 function ClosePair(char)
-if getline('.')[col('.') - 1] == a:char
-return "\<Right>"
-else
-return a:char
-endif
+	if getline('.')[col('.') - 1] == a:char
+		return "\<Right>"
+	else
+		return a:char
+	endif
 endf
 
 
@@ -243,14 +243,30 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 
 "ctags 
 set tags=tags;
-    set autochdir
+set autochdir
 "set tags=/usr/include/tags,./tags,./..tags,./**/tags
 "set tags=tags
 "set tags+=./tags        " add current directory's generated tags file
 "
 "cscpoe
-cs add cscpoe.out;
-    set autochdir
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cscope setting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("cscope")
+	if MySys() == "windows"  
+		set csprg=cscope
+	elseif MySys() == "linux"  
+		set csprg=/usr/bin/cscope
+	endif  
+	set csto=1
+	set cst
+	set nocsverb
+	" add any database in current directory
+	if filereadable("cscope.out")
+		cs add cscope.out
+	endif
+	set csverb
+endif
 
 "SuperTab
 let g:SuperTabMappingForward="<tab>" 
