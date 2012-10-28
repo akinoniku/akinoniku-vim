@@ -234,7 +234,7 @@ endif
 endf
 
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --smart-case"
+"let g:ackprg="ack-grep -H --nocolor --nogroup --column --smart-case"
 
 "php-doc
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
