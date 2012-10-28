@@ -242,7 +242,9 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 
 "ctags 
-set tags=/usr/include/tags,./tags,./..tags,./**/tags
+set tags=tags;
+    set autochdir
+"set tags=/usr/include/tags,./tags,./..tags,./**/tags
 "set tags=tags
 "set tags+=./tags        " add current directory's generated tags file
 
