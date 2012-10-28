@@ -242,8 +242,9 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 
 "ctags 
-set tags=tags
-set tags+=./tags        " add current directory's generated tags file
+set tags=/usr/include/tags,./tags,./..tags,./**/tags
+"set tags=tags
+"set tags+=./tags        " add current directory's generated tags file
 
 "SuperTab
 let g:SuperTabMappingForward="<tab>" 
@@ -273,5 +274,6 @@ nmap <silent> <leader>ll :LUBufs<cr>
 nmap <silent> <leader>lw :LUWalk<cr>
 
 let g:JSLintHighlightErrorLine = 0
+let b:jshint_disabled = 1
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_min_syntax_length = 3
