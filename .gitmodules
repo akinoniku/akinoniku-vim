@@ -46,3 +46,6 @@
 [submodule "bundle/cscope"]
 	path = bundle/cscope
 	url = https://github.com/vim-scripts/cscope.vim
+[submodule "bundle/vim-javascript"]
+	path = bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
