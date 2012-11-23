@@ -54,10 +54,6 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "acky
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 "set mouse=a
 call pathogen#infect()
 set t_Co=256
