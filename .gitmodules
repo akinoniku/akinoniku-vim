@@ -49,12 +49,9 @@
 [submodule "bundle/vim-php-cs-fixer"]
 	path = bundle/vim-php-cs-fixer
 	url = https://github.com/stephpy/vim-php-cs-fixer
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = https://github.com/ervandew/supertab
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion/
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
-	url = https://github.com/msanders/snipmate.vim.git
+[submodule "bundle/neosnippet"]
+	path = bundle/neosnippet
+	url = https://github.com/Shougo/neosnippet
