@@ -270,10 +270,12 @@ if has("cscope")
 endif
 
 "SuperTab
+"Old setting
 let g:SuperTabMappingForward="<tab>" 
 let g:SuperTabRetainCompletionType=2
-let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-"let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType ="<C-X><C-U>"
+"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+""let g:SuperTabDefaultCompletionType = "context"
 
 let g:syntastic_check_on_open=1
 "phpcs，tab 4个空格，编码参考使用CodeIgniter风格
@@ -289,12 +291,13 @@ let g:LookupFile_AlwaysAcceptFirst = 1          "回车打开第一个匹配项�
 let g:LookupFile_AllowNewFiles = 0              "不允许创建不存在的文件
 let g:LookupFile_TagExpr = '"./filenametags"'
 
-"""映射LookupFile为,lk
-"nmap <silent> <leader>lk :LUTags<cr>
-"""映射LUBufs为,ll
-"nmap <silent> <leader>ll :LUBufs<cr>
-"""映射LUWalk为,lw
-"nmap <silent> <leader>lw :LUWalk<cr>
+""映射LookupFile为,lk
+nmap <silent> <leader>lk :LUTags<cr>
+""映射LUBufs为,ll
+nmap <silent> <leader>ll :LUBufs<cr>
+""映射LUWalk为,lw
+nmap <silent> <leader>lw :LUWalk<cr>
 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_min_syntax_length = 3
+let g:NeoComplCache_DisableAutoComplete = 1
