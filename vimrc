@@ -259,14 +259,14 @@ if has("cscope")
 	elseif MySys() == "linux"  
 		set csprg=/usr/bin/cscope
 	endif  
-	set csto=1
-	set cst
-	set nocsverb
-	" add any database in current directory
-	if filereadable("cscope.out")
-		cs add cscope.out
-	endif
-	set csverb
+	"set csto=1
+	"set cst
+	"set nocsverb
+	"" add any database in current directory
+	"if filereadable("cscope.out")
+	"	cs add cscope.out
+	"endif
+	"set csverb
 endif
 
 "SuperTab
