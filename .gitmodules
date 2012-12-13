@@ -58,3 +58,6 @@
 [submodule "bundle/cscope_macros"]
 	path = bundle/cscope_macros
 	url = https://github.com/vim-scripts/cscope_macros.vim
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = http://github.com/mattn/zencoding-vim.git
