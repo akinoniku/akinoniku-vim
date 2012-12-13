@@ -54,7 +54,6 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 "acky
-"set mouse=a
 call pathogen#infect()
 set t_Co=256
 "set guifont=Luxi\ Mono\ 9
@@ -83,7 +82,7 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 """"""""""""""""""""""""""""""""""""""""""""
 set guioptions-=T  "去掉工具条
-"set guioptions-=m " 隐藏菜单栏
+set guioptions-=m " 隐藏菜单栏
 set guioptions-=L " 隐藏左侧滚动条
 set guioptions-=r " 隐藏右侧滚动条
 set guioptions-=b " 隐藏底部滚动条
@@ -149,15 +148,6 @@ function! SetOption()
 	set number
 	set fdm=syntax
 	set fen 
-	if !exists('g:AutoComplPop_Behavior') 
-		let g:AutoComplPop_Behavior = {} 
-		let g:AutoComplPop_Behavior['php'] = [] 
-		call add(g:AutoComplPop_Behavior['php'], { 
-					\   'command'   : "\<C-x>\<C-o>", 
-					\   'pattern'   : printf('\(->\|::\|\$\)\k\{%d,}$', 0), 
-					\   'repeat'    : 0, 
-					\}) 
-	endif 
 
 	" 打开javascript折叠
 	let b:javascript_fold=1
@@ -243,12 +233,7 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 
 "ctags 
 set tags=./tags;
-"set tags=tags;
-"set autochdir
-"set tags=/usr/include/tags,./tags,./..tags,./**/tags
-"set tags=tags
-"set tags+=./tags        " add current directory's generated tags file
-"
+
 "cscpoe
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " cscope setting
@@ -259,23 +244,11 @@ if has("cscope")
 	elseif MySys() == "linux"  
 		set csprg=/usr/bin/cscope
 	endif  
-	"set csto=1
-	"set cst
-	"set nocsverb
-	"" add any database in current directory
-	"if filereadable("cscope.out")
-	"	cs add cscope.out
-	"endif
-	"set csverb
+	set csto=1
+	set cst
+	set nocsverb
+	set csverb
 endif
-
-"SuperTab
-"Old setting
-"let g:SuperTabMappingForward="<tab>" 
-"let g:SuperTabRetainCompletionType=2
-"let g:SuperTabDefaultCompletionType ="<C-X><C-U>"
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-""let g:SuperTabDefaultCompletionType = "context"
 
 let g:syntastic_check_on_open=1
 "phpcs，tab 4个空格，编码参考使用CodeIgniter风格
