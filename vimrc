@@ -55,6 +55,7 @@ endif
 
 "acky
 call pathogen#infect()
+let mapleader=','
 set t_Co=256
 "set guifont=Luxi\ Mono\ 9
 set guifont=Source\ Code\ Pro\ Semibold:h9
