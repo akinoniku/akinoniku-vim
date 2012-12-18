@@ -61,3 +61,6 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = http://github.com/mattn/zencoding-vim.git
+[submodule "bundle/CSScomb"]
+	path = bundle/CSScomb
+	url = https://github.com/miripiruni/CSScomb-for-Vim.git
