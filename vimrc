@@ -99,7 +99,7 @@ endif
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
-language messages zh_CN.utf-8
+"language messages zh_CN.utf-8
 "Gvim 乱码的设置结束
 """""""""""""""""""""""""""""""""""""""""""""""
 " Alt+数字切换Table快捷键设置
