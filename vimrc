@@ -129,7 +129,7 @@ function! MySys()
 endfunction
 
 "NERDTree
-map <F9> :NERDTreeToggle<CR>
+"map <F9> :NERDTreeToggle<CR>
 
 au FileType phtml,php,c,java,javascript,html,htm,smarty call SetOption()
 function! SetOption()
@@ -151,7 +151,7 @@ function! SetOption()
 	set fen 
 
 	" 打开javascript折叠
-	let b:javascript_fold=1
+	"let b:javascript_fold=1
 
 	" 打开javascript对dom、html和css的支持
 	let javascript_enable_domhtmlcss=1
@@ -271,6 +271,11 @@ nmap <silent> <leader>lk :LUTags<cr>
 nmap <silent> <leader>ll :LUBufs<cr>
 ""映射LUWalk为,lw
 nmap <silent> <leader>lw :LUWalk<cr>
+
+"Acky function disable the auto compete
+let g:neocomplcache_disable_auto_complete = 1
+"And super tab
+let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
