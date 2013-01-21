@@ -272,6 +272,26 @@ nmap <silent> <leader>ll :LUBufs<cr>
 ""映射LUWalk为,lw
 nmap <silent> <leader>lw :LUWalk<cr>
 
+" lookup file with ignore case
+function! LookupFile_IgnoreCaseFunc(pattern)
+    let _tags = &tags
+    try
+        let &tags = eval(g:LookupFile_TagExpr)
+        let newpattern = '\c' . a:pattern
+        let tags = taglist(newpattern)
+    catch
+        echohl ErrorMsg | echo "Exception: " . v:exception | echohl NONE
+        return ""
+    finally
+        let &tags = _tags
+    endtry
+
+    " Show the matches for what is typed so far.
+    let files = map(tags, 'v:val["filename"]')
+    return files
+endfunction
+let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc' 
+
 "Acky function disable the auto compete
 let g:neocomplcache_disable_auto_complete = 1
 "And super tab
