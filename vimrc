@@ -57,6 +57,9 @@ endif
 call pathogen#infect()
 let mapleader=','
 set t_Co=256
+"auto read and auto write
+set autoread
+set autowriteall
 "set guifont=Luxi\ Mono\ 9
 set guifont=Source\ Code\ Pro\ Semibold:h9
 let g:solarized_termcolors=256
