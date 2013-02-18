@@ -296,9 +296,9 @@ endfunction
 let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc' 
 
 "Acky function disable the auto compete
-let g:neocomplcache_disable_auto_complete = 1
+"let g:neocomplcache_disable_auto_complete = 1
 "And super tab
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 " Disable AutoComplPop. Comment out this line if AutoComplPop is not installed.
 let g:acp_enableAtStartup = 0
 " Launches neocomplcache automatically on vim startup.
