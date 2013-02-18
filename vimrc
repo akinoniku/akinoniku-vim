@@ -74,11 +74,7 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
-"for workspace
-" execute project related configuration in current directory
-if filereadable("./workspace.vim")
-     source ./workspace.vim
-endif 
+
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -391,3 +387,9 @@ smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+"for workspace
+" execute project related configuration in current directory
+if filereadable("./workspace.vim")
+     source ./workspace.vim
+endif 
